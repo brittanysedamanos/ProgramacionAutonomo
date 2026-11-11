@@ -35,18 +35,6 @@ Los nombres van en minúsculas y sin guiones bajos como recomienda la guía de e
 El paquete main es el único que no corresponde a un módulo del sistema: su función es arrancar el programa y llamar a los demás paquetes. 
 La lógica no se concentra en main.
 
-Estructura del repositorio
-inventario-tienda/
-├── go.mod
-├── README.md
-├── main.go
-├── productos/
-│   └── productos.go
-├── stock/
-│   └── stock.go
-└── reportes/
-    └── reportes.go
-
     
 Paquetes
 En esta etapa no se usan paquetes de terceros. 
