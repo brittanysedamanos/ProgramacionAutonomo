@@ -31,7 +31,6 @@ El sistema se divide en tres módulos y cada uno se implementa como un paquete d
 El módulo de productos corresponde al paquete productos y su archivo es productos.go dentro de la carpeta productos. 
 El módulo de stock corresponde al paquete stock y su archivo es stock.go dentro de la carpeta stock. 
 El módulo de reportes corresponde al paquete reportes y su archivo es reportes.go dentro de la carpeta reportes. 
-Los nombres van en minúsculas y sin guiones bajos como recomienda la guía de estilo de Go. 
 El paquete main es el único que no corresponde a un módulo del sistema: su función es arrancar el programa y llamar a los demás paquetes. 
 La lógica no se concentra en main.
 
@@ -42,12 +41,3 @@ Todo se resuelve con la librería estándar de Go.
 Se usan errors y fmt y sort y strings. 
 Si en etapas posteriores se incorpora alguno se documentará su uso y su justificación.
 
-Cómo compilar y ejecutar
-Para comprobar que el proyecto compila hay que ubicarse dentro de la carpeta del repositorio y ejecutar go build ./... 
-Si no muestra ningún error significa que la estructura de paquetes y las firmas de las funciones están bien. 
-Para ejecutar el programa se usa go run main.go.
-
-Estado del proyecto
-Etapa 1 completada: estructura de paquetes y funciones declaradas. 
-En la siguiente etapa se incorporarán structs y encapsulación y manejo de errores e interfaces. 
-Al final del curso se convertirá en una aplicación web con al menos ocho servicios.
