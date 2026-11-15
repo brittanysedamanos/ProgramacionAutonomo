@@ -1,15 +1,16 @@
-Inventario de Tienda
-Sistema de gestión de inventario para una tienda pequeña desarrollado en Go como parte del Aprendizaje Autónomo 1 de la Unidad 1. 
-El proyecto busca que el dueño o encargado pueda llevar un control ordenado de sus productos sin depender de un cuaderno o de una hoja de Excel que con el tiempo se vuelve difícil de mantener. 
+Inventario de Tienda. 
+
+Es un sistema de gestión de inventario para una tienda pequeña desarrollado en Go. 
+El proyecto busca que la dueña o encargada pueda llevar un control ordenado de sus productos sin depender de un cuaderno o de una hoja de excel que con el tiempo se vuelve difícil de mantener. 
 La organización en paquetes y funciones permite que el sistema crezca por etapas sin abrumar al usuario con una herramienta compleja desde el primer día.
 
-Objetivo
+Objetivo: 
 Diseñar la estructura de un sistema de inventario organizado en paquetes y funciones de Go que permita registrar productos y consultarlos y modificarlos y eliminarlos. 
 También busca llevar el control de entradas y salidas de stock y generar reportes básicos que ayuden a tomar decisiones. 
 En esta primera etapa solo se declaran las funciones y se organizan los paquetes. 
 La lógica completa se implementará en etapas posteriores del curso.
 
-Alcance
+Alcance: 
 El sistema puede registrar productos con su SKU su nombre su categoría su precio y su stock inicial. 
 Puede consultar un producto por su SKU y puede listar todos los productos registrados. 
 Puede filtrar por categoría y puede modificar el precio de un producto y puede eliminarlo del inventario.
@@ -26,7 +27,7 @@ No se conecta a una base de datos porque en esta etapa los datos se manejan en m
 No procesa pagos reales ni facturación. 
 Tampoco genera archivos PDF ni exportaciones porque los listados son en texto.
 
-Módulos y paquetes
+Módulos y paquetes: 
 El sistema se divide en tres módulos y cada uno se implementa como un paquete de Go. 
 El módulo de productos corresponde al paquete productos y su archivo es productos.go dentro de la carpeta productos. 
 El módulo de stock corresponde al paquete stock y su archivo es stock.go dentro de la carpeta stock. 
