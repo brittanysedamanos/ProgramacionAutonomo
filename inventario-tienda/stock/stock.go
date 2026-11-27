@@ -64,7 +64,7 @@ func actualizarStockInterno(sku string, nuevoStock int) error {
 	// pero mjr usamos los métodos disponibles.
 
 	// Lo ideal sería que productos tenga un SetStockPorSKU.
-	// Vamos a simularlo:
+	// lo simulamos:
 	for _, p := range productos.ObtenerInventario() {
 		if p.SKU() == sku {
 			return p.SetStock(nuevoStock) // Usamos el setter del struct
