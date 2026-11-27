@@ -44,7 +44,7 @@ func NewProducto(sku, nombre, categoria string, precio float64, stockInicial int
 	}, nil
 }
 
-// --- GETTERS (Receptor de valor) ---
+// --- GETTERS---
 func (p Producto) SKU() string         { return p.sku }
 func (p Producto) Nombre() string      { return p.nombre }
 func (p Producto) Categoria() string   { return p.categoria }
@@ -52,7 +52,7 @@ func (p Producto) Precio() float64     { return p.precio }
 func (p Producto) Stock() int          { return p.stock }
 func (p Producto) ValorTotal() float64 { return p.precio * float64(p.stock) }
 
-// --- SETTERS (Receptor de puntero, validan antes de modificar) ---
+// --- SETTERS ---
 func (p *Producto) SetPrecio(nuevoPrecio float64) error {
 	if nuevoPrecio < 0 {
 		return errors.New("el precio no puede ser negativo")
@@ -70,7 +70,7 @@ func (p *Producto) SetStock(nuevoStock int) error {
 	return nil
 }
 
-// --- SLICE GLOBAL (Base de datos en memoria) ---
+// --- SLICE GLOBAL ---
 // Usamos un slice porque importa el orden en que se registran los productos
 var inventario = []*Producto{}
 
