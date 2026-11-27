@@ -98,7 +98,7 @@ El programa principal (main.go) revisa cada error devuelto (if err != nil) evita
 Interfaces
 
 Al usar la interfaz ItemInventario, el sistema puede tratar de la misma forma a los productos actuales 
-y a futuros servicios (como reparaciones) sin tener que reescribir la lógica de reportes.
+y a futuros servicios sin tener que reescribir la lógica de reportes.
 
 
 
