@@ -83,9 +83,3 @@ El programa principal (main.go) revisa cada error devuelto (if err != nil) evita
 Interfaces: Al usar la interfaz ItemInventario, el sistema puede tratar de la misma forma a los productos actuales 
 y a futuros servicios (como reparaciones) sin tener que reescribir la lógica de reportes.
 
-Enfoque en el usuario
-El diseño del sistema y el manejo de errores se pensó para dueños de tiendas de mayor edad. 
-Al recibir mensajes de error claros y no bloqueantes (como "el SKU ya está registrado" o "no hay suficiente stock") 
-se reduce la frustración y se facilita la transición del cuaderno físico al sistema digital, 
-respondiendo a las barreras tecnológicas identificadas en la investigación inicial.
-
