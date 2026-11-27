@@ -54,36 +54,54 @@ En esta etapa no se usan paquetes de terceros. Todo se resuelve con la librería
 Se usan errors, fmt y las estructuras básicas del lenguaje. Si en etapas posteriores se incorpora alguno, 
 se documentará su uso y su justificación.
 
+
 Decisiones de diseño 
 
 Para esta etapa se tomaron las siguientes decisiones, basadas en las buenas prácticas de Go:
 
-Entidades y Structs: Se creó el struct Producto para modelar el artículo físico. 
+Entidades y Structs
+
+Se creó el struct Producto para modelar el artículo físico. 
 Los campos están en minúscula para que sean privados.
 
-Receptores: Los getters usan receptor de valor (p Producto) porque solo leen información. 
+Receptores
+
+Los getters usan receptor de valor (p Producto) porque solo leen información. 
 Los setters usan receptor de puntero (p *Producto) porque necesitan modificar la instancia original y no una copia.
 
-Estructuras de datos: Se utilizó un slice ([]*Producto) para almacenar el inventario porque el orden de inserción 
+Estructuras de datos
+
+Se utilizó un slice ([]*Producto) para almacenar el inventario porque el orden de inserción 
 es importante para el usuario. Si el sistema creciera mucho, se podría migrar a un map para búsquedas más rápidas, 
 pero para este alcance el slice es óptimo.
 
-Interfaz: Se creó la interfaz ItemInventario que permite aplicar polimorfismo en los reportes. 
+Interfaz
+
+Se creó la interfaz ItemInventario que permite aplicar polimorfismo en los reportes. 
 El cálculo del valor total funciona con cualquier entidad que cumpla con esa interfaz.
 
+
 Aplicación de conceptos teóricos
-Encapsulación: Se aplicó ocultando los campos del struct Producto. 
+
+Encapsulación
+
+Se aplicó ocultando los campos del struct Producto. 
 Para modificar el estado se usan métodos setter que validan la información. 
 Siguiendo la teoría, el setter usa un puntero para que el cambio persista en la estructura original y no en una copia.
 
-Manejo de errores: Se utilizó errors.New para validaciones fijas (como evitar SKU vacíos) y fmt.Errorf cuando era 
+Manejo de errores 
+
+Se utilizó errors.New para validaciones fijas (como evitar SKU vacíos) y fmt.Errorf cuando era 
 necesario incluir el valor erróneo en el mensaje (como un precio negativo). 
 El programa principal (main.go) revisa cada error devuelto (if err != nil) evitando que el sistema falle abruptamente.
 
-Interfaces: Al usar la interfaz ItemInventario, el sistema puede tratar de la misma forma a los productos actuales 
+Interfaces
+
+Al usar la interfaz ItemInventario, el sistema puede tratar de la misma forma a los productos actuales 
 y a futuros servicios (como reparaciones) sin tener que reescribir la lógica de reportes.
 
 Enfoque en el usuario
+
 El diseño del sistema y el manejo de errores se pensó para dueños de tiendas de mayor edad. 
 Al recibir mensajes de error claros y no bloqueantes (como "el SKU ya está registrado" o "no hay suficiente stock") 
 se reduce la frustración y se facilita la transición del cuaderno físico al sistema digital, 
