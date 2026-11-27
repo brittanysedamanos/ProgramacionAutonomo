@@ -13,3 +13,17 @@ Todavía no incluye una interfaz web. Tampoco maneja usuarios ni inicio de sesi�
 Módulos y paquetes El sistema se divide en tres módulos y cada uno se implementa como un paquete de Go. El módulo de productos corresponde al paquete productos y su archivo es productos.go dentro de la carpeta productos. El módulo de stock corresponde al paquete stock y su archivo es stock.go dentro de la carpeta stock. El módulo de informes corresponde al paquete de informes y su archivo es reportes.go dentro de la carpeta de informes. El paquete principal es el único que no corresponde a un módulo del sistema: su función es arrancar el programa y llamar a los demás paquetes. La lógica no se concentra en main.
 
 Paquetes En esta etapa no se usan paquetes de terceros. Todo se resuelve con la librería estándar de Go. Se usan errores y fmt y sort y strings. Si en etapas posteriores se incorporará alguno se documentará su uso y su justificación.
+
+ETAPA 2 
+Decisiones de diseño 
+
+Entidades: Usé el struct Producto porque representa el artículo físico que el inventario controla.
+
+Receptor de valor vs puntero: Los getters usan receptor de valor (p Producto) porque solo leen.
+Los setters usan (p *Producto) porque modifican y validan antes de cambiar.
+
+Slice vs Map: Usé un slice []*Producto para el inventario porque importa el orden de inserción
+Si necesitara busquedas super rápidas, usaria un map, pero el slice es suficiente.
+
+Interfaz: Creé ItemInventario para que en el futuro se puedan agregar otros tipos (como Servicios) 
+y el reporte los trate igual (polimorfismo).
